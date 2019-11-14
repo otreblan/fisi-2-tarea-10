@@ -117,6 +117,7 @@ Determina los valores de:
 	\begin{tikzpicture}[domain=-2.5:12.5, scale=0.6]
 
 		\boldmath
+		\bfseries
 		\draw[<->] (-4,0) -- (14,0) node[right] {$t(ms)$};
 		\draw[<->] (0,-6) -- (0,6) node[above] {Voltaje $(V)$};
 
@@ -140,7 +141,6 @@ Determina los valores de:
 		\subitem $15ms$
 	\item El voltaje pico.
 		\begin{align*}
-			V(0) &= 4.5\\
 			k*\sen
 			{
 				\left(
@@ -149,15 +149,15 @@ Determina los valores de:
 						\frac{\pi}{7.5}
 					\right)
 				\right)
-		} &= 4.5\\
-		k*\sen
-		{
-			\left(
-				\frac{\pi}{3}
-			\right)
-		} &= 4.5\\
-		k* \frac{\sqrt{3}}{2}  &= 4.5\\
-		k &= 3\sqrt{3}V = V_p
+			} &= 4.5V = V(0)\\
+			k*\sen
+			{
+				\left(
+					\frac{\pi}{3}
+				\right)
+			} &= 4.5V\\
+			k* \frac{\sqrt{3}}{2}  &= 4.5V\\
+			k &= 3\sqrt{3}V = V_p
 		\end{align*}
 	\item El voltaje $RMS$.
 		\begin{align*}
