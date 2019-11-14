@@ -18,6 +18,58 @@ el voltímetro $V_1$ registra una medida de $85V$.
 Todos los instrumentos mostrados son ideales.
 Si el periodo de la fuente alterna es de $20ms$, halla:
 
+\begin{figure}[H]
+	\centering
+	\begin{tikzpicture}
+		[
+			circuit ee IEC,
+			set resistor graphic   = var resistor IEC graphic,
+			circuit declare symbol = multimeter,
+			set multimeter graphic =
+			{
+				draw,
+				inner sep = 3pt,
+				shape     = generic circle IEC
+			}
+		]
+		\draw (0,0)
+			to
+			[
+				capacitor  = {pos=0.5, info'=$30\mu F$},
+				multimeter = {pos=0.75, node contents=$A$}
+			]
+			++(4,0)
+			to[resistor={info'=$150\Omega$}]
+			++(0,3)
+			to
+			[
+				contact  = {pos=0.1, name={contact 1}},
+				inductor = {info'=$250mH$},
+				contact  = {pos=0.9, name={contact 2}}
+			]
+			++(-4,0)
+			to
+			[
+				contact   = {pos=0.1, name={contact 3}},
+				ac source = {info=0:$V(t)$, rotate=90},
+				contact   = {pos=0.9, name={contact 4}}
+			]
+			(0,0)
+			;
+
+		\node (v1) [multimeter]
+			at ($(contact 3)!0.5!(contact 4)+(180:1.25)$) {$V_1$};
+		\draw (v1.north) |- (contact 3);
+		\draw (v1.south) |- (contact 4);
+
+		\node (v2) [multimeter]
+			at ($(contact 1)!0.5!(contact 2)+(90:1.25)$) {$V_2$};
+		\draw (v2.east) -| (contact 1);
+		\draw (v2.west) -| (contact 2);
+
+	\end{tikzpicture}
+\end{figure}
+
 \begin{enumerate}[label=\alph*)]
 	\item La impedancia total del circuito.
 	\item La lectura del voltímetro $V_2$.
