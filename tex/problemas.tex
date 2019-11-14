@@ -72,10 +72,38 @@ Si el periodo de la fuente alterna es de $20ms$, halla:
 
 \begin{enumerate}[label=\alph*)]
 	\item La impedancia total del circuito.
+		\begin{align*}
+			X_L &= 50*2\pi*250*10^{-3}\\
+			X_L &= 125i\\
+			\\
+			X_C &= \frac{1}{50*2\pi*30*10^{-6}}\\
+			X_C &= -\frac{1000}{3\pi}i\\
+			\\
+			Z &= X_L+X_C+R\\
+			Z &= (150 +\frac{375\pi-1000}{3\pi} i)\Omega\\
+			Z &= 151.19\Omega\phase{7.18°}
+		\end{align*}
 	\item La lectura del voltímetro $V_2$.
+		\begin{align*}
+			I &= \frac{V}{Z}\\
+			I &= \frac{85V\phase{0°}}{151.19\Omega\phase{7.18°}}\\
+			I &= 0.56A\phase{-7.18°}\\
+			\\
+			V_1 &= I*X_L\\
+			V_1 &= 0.56\phase{-7.18°}*125\phase{90°}\\
+			V_1 &= 70V\phase{82.82°}
+		\end{align*}
 	\item La lectura del amperímetro $A_1$.
+		\begin{align*}
+			I &= 0.56A\phase{-7.18°}
+		\end{align*}
 	\item El ángulo de desfase entre el voltaje y la corriente.
 		¿La corriente está atrasada o adelantada respecto al voltaje?
+		\begin{align*}
+			V_\theta &= 0°\\
+			I_\theta &= -7.18°\\
+		\end{align*}
+		Atrasada
 \end{enumerate}
 
 \subsection{}%
